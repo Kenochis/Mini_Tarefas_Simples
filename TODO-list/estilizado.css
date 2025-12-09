@@ -1,0 +1,54 @@
+#btnAdd {
+    margin-top: 3px;
+    border-radius: 10px;
+    background: #d3d3d3;
+    font-family: "DynaPuff", sans-serif;
+    color:rgb(6, 87, 19)
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.tarefa {
+    margin: 20px 5px;
+    display: flex;
+    align-items: center;
+    
+    /* Distribui os itens corretamente sem empurrar nada pra fora */
+    justify-content: space-between;
+
+    padding: 8px 12px;
+    list-style: none;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 10px;
+
+    /* IMPORTANTE: garante que o botão cabe */
+    width: 50%;
+}
+
+/* Agrupar checkbox + texto */
+.tarefa .esquerda {
+    display: flex;
+    align-items: center;
+    gap: 10px;  /* espaço entre checkbox e texto */
+}
+
+/* Botão de excluir */
+.btnDelete {
+    padding: 3px 5px;
+    background: #a53131;
+    color: rgb(0, 0, 0);
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.risco {
+    text-decoration: line-through;
+    color: #888; /* opcional, deixa cinza */
+    transition: 0.4s;
+}
