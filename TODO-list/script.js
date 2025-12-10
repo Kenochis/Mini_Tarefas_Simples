@@ -1,25 +1,33 @@
 const lista = document.getElementById('lista');
-const input = document.getElementById('campo');
+const input = document.getElementById('nova-tarefa');
 
 // input.value → texto digitado.
 // trim() → remove espaços extras.
-const btnAdd = document.getElementById('btnAdd').addEventListener("click", () => {
+
+function adicionarTarefa() {
+    const tarefaNova = document.createElement('li');
+    tarefaNova.classList.add('tarefa');
+
+    tarefaNova.innerHTML = `
+    <div class="esquerda">
+        <input type="checkbox" class="checkbox">
+        <span class="txt">${input.value}</span>
+    </div>
+
+    <button class="btnDelete">Delete</button>
+    `
+
+    lista.appendChild(tarefaNova);
+}
+
+const form = document.querySelector('.addTarefa').addEventListener("submit", (event) => {
+    event.preventDefault();
+    
     if (input.value.trim() === "") { 
         input.focus();
     } else {
-        const tarefaNova = document.createElement('li');
-        tarefaNova.classList.add('tarefa');
-
-        tarefaNova.innerHTML = `
-        <div class="esquerda">
-            <input type="checkbox" class="checkbox">
-            <span class="txt">${input.value}</span>
-        </div>
-
-        <button class="btnDelete">Delete</button>
-        `
-
-        lista.appendChild(tarefaNova);
+        adicionarTarefa();
+        input.value = "";
     }
 });
 
